@@ -1,0 +1,51 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    .row {
+        margin: 0;
+        padding: 0;
+        [class*='col-'] {
+            padding: 0;
+            margin: 0;
+        }
+    }
+}
+
+nav#nav {
+    background: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+.asection {
+    padding: 30px;
+}
+
+#welcome-container {
+    background: #333;
+    color: #fff;
+    button#order-now {
+        padding: 10px 60px;
+        font-size: 22px;
+    }
+    p {
+        text-align: center;
+        margin: 20px 0;
+    }
+}
+
+#promo-container {
+    background: #0a0;
+    padding: 30px;
+}
+
+#order-container {
+    background: #fff;
+    padding: 30px;
+}
+
