@@ -66,8 +66,14 @@ nav#navbar {
 }
 
 #activity-container {
-    background: #fff;
+    background: #333;
+    color: #fff;
     padding: 30px;
+    #sales-feed {
+        .sales-feed-item {
+            color: #000;
+        }
+    }
 }
 
 #order-container {
