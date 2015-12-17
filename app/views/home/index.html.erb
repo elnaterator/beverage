@@ -1,12 +1,13 @@
 
-<div class="container">
+<nav id="navbar">
+    <ul class="nav nav-pills">
+        <li role="presentation"><a href="#" onclick="scrollTo('#product-container')">About our product</a></li>
+        <li role="presentation"><a href="#" onclick="scrollTo('#activity-container')">How to get it</a></li>
+        <li role="presentation" class="hidden-small"><a href="#" onclick="scrollTo('#order-container')">Order form</a></li>
+    </ul>
+</nav>
 
-    <nav id="navbar">
-        <ul class="nav nav-pills">
-            <li role="presentation"><a href="#">Order</a></li>
-            <li role="presentation"><a href="#">About</a></li>
-        </ul>
-    </nav>
+<div class="container">
     
     <div id="welcome-container" class="asection">
         <div class="row">
@@ -25,18 +26,59 @@
             </div>
             <div class="col-xs-12 col-sm-4">
                 <p>When that refreshing bite of sparkling water just isn't cutting it. 
-                When you need some water that will make you cry.</p>
-                <button id="order-now" class="btn btn-primary center-block">Get me some!</button>
+                When you need some water that will really make you cry.</p>
+                <button id="order-now" class="btn btn-primary center-block" onclick="scrollTo('#order-container')">Get me some!</button>
             </div>
         </div>
     </div>
     
-    <div id="promo-container" class="asection">
+    <div id="product-container" class="asection">
+        <h1>About our product</h1>
+        <p>Habanero seltzer is a sparkling water infused with concentrated habanero extract that will set your mouth on fire... for hours. 
+        Apart from being a refreshing beverage, habanero seltzer can be used for:</p>
+        <ul>
+            <li>Toughening you up</li>
+            <li>Numbing your tastebuds</li>
+            <li>Punishing yourself when you know you deserve it</li>
+        </ul>
+        <hr/>
+        <h1>What are people saying?</h1>
+        <div class="row" id="testimonials">
+            <div class="col-xs-12 col-sm-4 col-md-4">
+                <div class="well">
+                    <div class="message">This is some message</div>
+                    - <i class="author">John Smith</i>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="activity-container" class="asection">
         hello
     </div>
     
     <div id="order-container" class="asection">
-        hello
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputFile">File input</label>
+            <input type="file" id="exampleInputFile">
+            <p class="help-block">Example block-level help text here.</p>
+          </div>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox"> Check me out
+            </label>
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
     </div>
-
+    
 </div>
