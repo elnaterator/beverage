@@ -2,7 +2,7 @@
  * Live sales feed
  */
 ;(function(exports) {
-    
+
     function initSalesFeed() {
         // Enable pusher logging - don't include this in production
         Pusher.log = function(message) {
@@ -15,7 +15,9 @@
         });
         var channel = pusher.subscribe('sales');
         channel.bind('new_sale', function(data) {
-          renderNewSale(data)
+          console.log('new sale');
+          console.log(data);
+          renderNewSale(data);
         });
     }
     
@@ -36,5 +38,5 @@
     exports.feed = {};
     exports.feed.initSalesFeed = initSalesFeed;
     exports.feed.renderNewSale = renderNewSale;
-
+    
 })(window);

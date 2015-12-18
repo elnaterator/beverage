@@ -10,7 +10,7 @@
         margin: 0;
         padding: 0;
         [class*='col-'] {
-            padding: 0;
+            padding: 0 10px;
             margin: 0;
         }
     }
@@ -42,7 +42,7 @@ nav#navbar {
 // Helper classes
 
 .asection {
-    padding: 30px;
+    padding: 20px;
 }
 
 // Section specifics

@@ -79,15 +79,3 @@ function getData(qty) {
     data.qty = qty;
     return data;
 }
-
-
-
-module('sales feed : initSalesFeed');
-
-
-
-test('should connect to pusher', function() {
-    
-    
-    
-});
