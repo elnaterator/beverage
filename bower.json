@@ -1,0 +1,22 @@
+{
+  "name": "beverage",
+  "homepage": "https://github.com/elnaterator/beverage",
+  "authors": [
+    "nhadzariga <n.hadzariga@gmail.com>"
+  ],
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "pusher": "https://js.pusher.com/3.0/pusher.min.js"
+  }
+}

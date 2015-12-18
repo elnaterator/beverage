@@ -3,12 +3,16 @@
  */
 ;(function(exports) {
     
-    function scrollTo(selector) {
+    function smoothScroll(selector) {
+        var offset = $(selector).offset().top
         $('html, body').animate({
-            scrollTop: $(selector).offset().top - 40
+            scrollTop: offset - 40
         }, 500);
     }
     
-    exports.scrollTo = scrollTo;
+    var nav = {
+        smoothScroll: smoothScroll
+    };
+    exports.nav = nav;
 
 })(window);

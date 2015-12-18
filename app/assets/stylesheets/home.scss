@@ -16,6 +16,8 @@
     }
 }
 
+// navbar
+
 nav#navbar {
     background: #fff;
     position: fixed;
@@ -37,9 +39,13 @@ nav#navbar {
     }
 }
 
+// Helper classes
+
 .asection {
     padding: 30px;
 }
+
+// Section specifics
 
 #welcome-container {
     background: #333;

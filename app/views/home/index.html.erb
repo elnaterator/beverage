@@ -1,14 +1,22 @@
 
+<!-- hold some configs used by js app -->
+<div id="configs" style="display:none;">
+    <input type="hidden" id="env" value="<%= @env %>"/>
+</div>
+
+<!-- Fixed navbar -->
 <nav id="navbar">
     <ul class="nav nav-pills">
-        <li role="presentation"><a href="#" onclick="scrollTo('#product-container')">About our product</a></li>
-        <li role="presentation"><a href="#" onclick="scrollTo('#activity-container')">How to get it</a></li>
-        <li role="presentation" class="hidden-small"><a href="#" onclick="scrollTo('#order-container')">Order form</a></li>
+        <li role="presentation"><a href="#" onclick="nav.smoothScroll('#product-container')">About our product</a></li>
+        <li role="presentation"><a href="#" onclick="nav.smoothScroll('#activity-container')">How to get it</a></li>
+        <li role="presentation" class="hidden-small"><a href="#" onclick="nav.smoothScroll('#order-container')">Order form</a></li>
     </ul>
 </nav>
 
+<!-- Main body container -->
 <div class="container">
     
+    <!-- First section -->
     <div id="welcome-container" class="asection">
         <div class="row">
             <div class="col-xs-12 col-sm-6">
@@ -27,11 +35,12 @@
             <div class="col-xs-12 col-sm-4">
                 <p>When that refreshing bite of sparkling water just isn't cutting it. 
                 When you need some water that will really make you cry.</p>
-                <button id="order-now" class="btn btn-primary center-block" onclick="scrollTo('#order-container')">Get me some!</button>
+                <button id="order-now" class="btn btn-primary center-block" onclick="nav.smoothScroll('#order-container')">Get me some!</button>
             </div>
         </div>
     </div>
     
+    <!-- More details section -->
     <div id="product-container" class="asection">
         <div class="row">
             <div class="col-xs-12 col-sm-6">
@@ -75,19 +84,17 @@
 
     </div>
     
+    <!-- How it works section -->
     <div id="activity-container" class="asection">
         <div class="row">
             <div class="col-xs-12 col-sm-8">
                 <h1>How to get it</h1>
                 <p>
-                    <strong>We deliver it to your door!</strong> Just fill out the <a href="#" onclick="scrollTo('#order-container')">order form</a> below.
+                    <strong>We deliver it to your door!</strong> Just fill out the <a href="#" onclick="nav.smoothScroll('#order-container')">order form</a> below.
                 </p>
                 <p>
-                    We offer:
+                    We offer free delivery! *
                 </p>
-                <ul>
-                    <li>Free delivery*</li>
-                </ul>
                 <p><i>* must be within walking distance of our bottling facility</i></p>
             </div>
             <div class="col-xs-12 col-sm-4">
@@ -95,8 +102,18 @@
                 <h1>Latest sales</h1>
                 <div id="sales-feed">
                     <div class="well sales-feed-item">
-                        <div><span class="qty">4</span> bottles sold to <span class="name">Henry</span> in 
-                        <span class="city">Santiago</span>, <span class="country">Chile</span></div>
+                        <div class="text-primary text-right datetime">2015-01-01 12:30:33</div>
+                        <div>
+                            <span class="qty">4</span> bottles sold to <span class="name">Henry</span> in 
+                            <span class="city">Santiago</span>, <span class="country">Chile</span>
+                        </div>
+                    </div>
+                    <div class="well sales-feed-item">
+                        <div class="text-primary text-right datetime">2015-01-01 12:30:33</div>
+                        <div>
+                            <span class="qty">4</span> bottles sold to <span class="name">Henry</span> in 
+                            <span class="city">Santiago</span>, <span class="country">Chile</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -104,6 +121,7 @@
 
     </div>
     
+    <!-- Order form section -->
     <div id="order-container" class="asection">
         <form>
           <div class="form-group">
