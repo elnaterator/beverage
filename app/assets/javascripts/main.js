@@ -1,7 +1,8 @@
 ;(function() {
     
     $(function() {
-       feed.initSalesFeed(); 
+       feed.initSalesFeed();
+       orders.registerEvents();
     });
     
 })();

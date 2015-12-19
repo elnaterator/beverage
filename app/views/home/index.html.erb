@@ -131,13 +131,13 @@
     <!-- Order form section -->
     <div id="order-container" class="asection">
         
-        <h1>Order form</h1>
+        <h1>Order Form</h1>
         
         <form id="order-form">
             
             <div class="row">
                 <div class="col-xs-12 col-sm-6">
-    
+
                     <!-- Order form nav tabs -->
                     <ul class="nav nav-tabs" role="tablist">
                         <li role="presentation" class="active"><a href="#order" aria-controls="order" role="tab" data-toggle="tab">Details</a></li>
@@ -244,13 +244,12 @@
                 <!-- Order summary -->
                 <div class="col-xs-12 col-sm-6">
                     <div class="well">
-                        <dl class="dl-horizontal center-block text-center">
-                            <dt>Quantity:</dt><dd id="qty">0</dd>
-                            <dt>Price/Unit:</dt><dd id="price">$3.00</dd>
+                        <dl class="dl-horizontal center-block text-center" id="summary">
+                            <dt>Quantity:</dt><dd id="summary-qty">0</dd>
+                            <dt>Price/Unit:</dt><dd id="price" price="<%= @price %>"><%= number_to_currency(@price) %></dd>
                             <dt>Total:</dt><dd id="total">$0.00</dd>
-                            <br/>
-                            <button type="button" class="btn btn-default center-block">Place order</button>
                         </dl>
+                        <button type="button" class="btn btn-default center-block">Place order</button>
                     </div>
                 </div>
                 

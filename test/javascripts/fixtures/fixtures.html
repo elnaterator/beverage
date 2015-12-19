@@ -1,4 +1,13 @@
+
+<!-- test sales feed and statistics -->
 <div>
+    
+    <h1>Statistics</h1>
+    <div class="text-primary"><i>live update</i></div>
+    <dl class="dl-horizontal">
+        <dt>Bottles sold:</dt><dd id="bottles-sold">1200</dd>
+        <dt>Bottles delivered:</dt><dd id="bottles-delivered">1000</dd>
+    </dl>
     
     <div id="sales-feed">
         <div class="sales-feed-item">
@@ -23,5 +32,18 @@
             </div>
         </div>
     </div>
+    
+</div>
+
+<!-- test order form -->
+<div>
+    
+    <input type="number" class="form-control" id="qty" placeholder="0">
+    
+    <dl class="dl-horizontal center-block text-center" id="summary">
+        <dt>Quantity:</dt><dd id="summary-qty">0</dd>
+        <dt>Price/Unit:</dt><dd id="price" price="<%= @price %>"><%= number_to_currency(@price) %></dd>
+        <dt>Total:</dt><dd id="total">$0.00</dd>
+    </dl>
     
 </div>

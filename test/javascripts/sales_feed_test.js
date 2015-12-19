@@ -45,7 +45,6 @@ test("should render a new sales-feed-item", function() {
 
 
 test("should render max of 5 items on screen", function() {
-   
     var $feed = $('#sales-feed');
     equal(3, $feed.children().length, '3 items total');
     feed.renderNewSale(data);
@@ -54,13 +53,16 @@ test("should render max of 5 items on screen", function() {
     equal(5, $feed.children().length, '5 items total');
     feed.renderNewSale(data);
     equal(5, $feed.children().length, '5 items total');
-    
 });
 
 
 
+function getData(qty) {
+    data.qty = qty;
+    return data;
+}
+
 test("should move items down the list", function() {
-   
     var $feed = $('#sales-feed');
     feed.renderNewSale(getData(5));
     feed.renderNewSale(getData(4));
@@ -72,10 +74,30 @@ test("should move items down the list", function() {
     equal('3', $feed.children().eq(2).find('.qty').text(), '3rd');
     equal('2', $feed.children().eq(1).find('.qty').text(), '4th');
     equal('1', $feed.children().eq(0).find('.qty').text(), '5th added is first in list');
-    
 });
 
-function getData(qty) {
-    data.qty = qty;
-    return data;
-}
+
+
+test("should update bottles sold statistic", function() {
+    $('#bottles-sold').text('10');
+    feed.renderNewSale(getData(5));
+    equal($('#bottles-sold').text(),'15','bottles sold not updated correctly');
+});
+
+
+
+
+module("sales feed : updateBottlesDelivered", {
+    setup: function() {
+        fixture.load("fixtures.html");
+    }
+});
+
+test('should update bottles delivered', function() {
+    $('#bottles-delivered').text('10');
+    data = {
+        qty: 5
+    }
+    feed.updateBottlesDelivered(data);
+    equal($('#bottles-delivered').text(),'15','bottles delivered not updated correctly');
+});
