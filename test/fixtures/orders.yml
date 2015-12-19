@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  qty: 1
+  first: MyString
+  last: MyString
+  city: MyString
+  country: MyString
+  cardholder: MyString
+  card: MyString
+  expiry_month: MyString
+  expiry_year: MyString
+  cvv: MyString
+
+two:
+  qty: 1
+  first: MyString
+  last: MyString
+  city: MyString
+  country: MyString
+  cardholder: MyString
+  card: MyString
+  expiry_month: MyString
+  expiry_year: MyString
+  cvv: MyString

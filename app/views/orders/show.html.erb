@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Qty:</strong>
+  <%= @order.qty %>
+</p>
+
+<p>
+  <strong>First:</strong>
+  <%= @order.first %>
+</p>
+
+<p>
+  <strong>Last:</strong>
+  <%= @order.last %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @order.city %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @order.country %>
+</p>
+
+<p>
+  <strong>Cardholder:</strong>
+  <%= @order.cardholder %>
+</p>
+
+<p>
+  <strong>Card:</strong>
+  <%= @order.card %>
+</p>
+
+<p>
+  <strong>Expiry month:</strong>
+  <%= @order.expiry_month %>
+</p>
+
+<p>
+  <strong>Expiry year:</strong>
+  <%= @order.expiry_year %>
+</p>
+
+<p>
+  <strong>Cvv:</strong>
+  <%= @order.cvv %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
