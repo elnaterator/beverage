@@ -16,7 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.4",
-    "pusher": "https://js.pusher.com/3.0/pusher.min.js"
+    "pusher": "https://js.pusher.com/3.0/pusher.min.js",
+    "jquery": "~2.1.4"
   }
 }

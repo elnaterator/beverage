@@ -15,8 +15,6 @@
         });
         var channel = pusher.subscribe('sales');
         channel.bind('new_sale', function(data) {
-          console.log('new sale');
-          console.log(data);
           renderNewSale(data);
         });
     }

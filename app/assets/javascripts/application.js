@@ -15,5 +15,6 @@
 //= require pusher/index
 // from rails gems
 //= require turbolinks
+//= require bootstrap-sprockets
 // custom js
 //= require_tree .
