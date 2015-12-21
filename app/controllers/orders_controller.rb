@@ -8,23 +8,22 @@ class OrdersController < ApplicationController
 
   # POST /orders
   def create
-    order_params = all_params.slice(:qty, :first, :last, :city, :country)
-    payment_params = all_params.slice(:cardholder, :card, :expiry_month, :expiry_year, :cvv)
-    @order = Order.new(order_params)
-    @payment = Payment.new(payment_params)
+    logger.info "Creating order: #{all_params}"
+    @order = Order.new(all_params.slice(:qty, :first, :last, :city, :country))
+    @payment = Payment.new(all_params.slice(:cardholder, :card, :expiry_month, :expiry_year, :cvv))
     order_valid = @order.valid?
     payment_valid = @payment.valid?
     if order_valid && payment_valid
       if @order_service.place_order(@payment,@order)
         render :show, status: :created, location: @order
       else
-        render json: { other: 'An unknown error has occured, please try again later.' }, status: :error
+        render json: { msg: ['unable to place order, please try again later'] }, status: :error
       end
     else
       errors = {}
       errors.merge(@order.errors) if @order.errors
       errors.merge(@payment.errors) if @payment.errors
-      render json: errors, status: :error
+      render json: @order.errors, status: :error
     end
   end
 
