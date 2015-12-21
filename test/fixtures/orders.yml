@@ -2,14 +2,14 @@
 
 one:
   qty: 1
-  first: MyString
-  last: MyString
-  city: MyString
-  country: MyString
+  first: Bill
+  last: Billson
+  city: Billville
+  country: USA
 
 two:
-  qty: 1
-  first: MyString
-  last: MyString
-  city: MyString
-  country: MyString
+  qty: 5
+  first: John
+  last: Johnson
+  city: Johnville
+  country: Canada

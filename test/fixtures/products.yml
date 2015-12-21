@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  code: MyString
-  description: MyString
-  price: 1.5
+  code: HABSELTZ
+  description: Habanero Seltzer
+  price: 3.95
 
 two:
   code: MyString

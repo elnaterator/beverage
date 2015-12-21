@@ -29,21 +29,21 @@ class PaymentTest < ActiveSupport::TestCase
   
   test "should authorize payment" do
     payment = Payment.new(valid_payment_data)
-    assert payment.authorize, "should return true when payment authorized"
+    assert payment.authorize(12.95), "should return true when payment authorized"
     assert_equal payment.transaction_id, "12345", "should set a transaction id"
   end
   
   test "should confirm payment" do
     payment = Payment.new(valid_payment_data)
     assert !payment.confirm, "should not allow confirm if not authorized"
-    payment.authorize
+    payment.authorize(12.95)
     assert payment.confirm, "should return true if authorized"
   end
   
   test "should void payment" do
     payment = Payment.new(valid_payment_data)
     assert !payment.void, "should not allow void if not authorized"
-    payment.authorize
+    payment.authorize(12.95)
     assert payment.void, "should allow void if authorized"
   end
   

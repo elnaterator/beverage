@@ -5,7 +5,7 @@ class Payment
     validates :card, credit_card_number: true
     validates :cvv, format: { with: /\A[0-9]{3,4}\z/, message: "only 3 or 4 numeric digits allowed" }
     
-    def authorize
+    def authorize(total)
         # send credit card information to payment service
         # store a transaction id if authorized
         # returns true if authorized, false if not
