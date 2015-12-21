@@ -117,13 +117,15 @@
                 <div class="pull-right text-primary"><i>live feed</i></div>
                 <h1>Latest sales</h1>
                 <div id="sales-feed">
+                    <% @latest_orders.each do |order| %>
                     <div class="well sales-feed-item">
-                        <div class="text-primary text-right datetime">2015-01-01 12:30:33</div>
+                        <div class="text-primary text-right datetime"><%= order[:created_at] %></div>
                         <div>
-                            <span class="qty">4</span> bottles sold to <span class="name">Henry</span> in 
-                            <span class="city">Santiago</span>, <span class="country">Chile</span>
+                            <span class="qty"><%= order[:qty] %></span> bottles sold to <span class="name"><%= order[:first] %></span> in 
+                            <span class="city"><%= order[:city] %></span>, <span class="country"><%= order[:country] %></span>
                         </div>
                     </div>
+                    <% end %>
                 </div>
                 
             </div>
@@ -213,8 +215,6 @@
                                     </div>
                                     <div class="col-xs-6">
                                         <select class="form-control" name="expiry-year">
-                                            <option value="13">2013</option>
-                                            <option value="14">2014</option>
                                             <option value="15">2015</option>
                                             <option value="16">2016</option>
                                             <option value="17">2017</option>
@@ -224,6 +224,8 @@
                                             <option value="21">2021</option>
                                             <option value="22">2022</option>
                                             <option value="23">2023</option>
+                                            <option value="24">2024</option>
+                                            <option value="25">2025</option>
                                         </select>
                                     </div>
                                 </div>

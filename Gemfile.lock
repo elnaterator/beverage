@@ -55,6 +55,9 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.0)
+    credit_card_validations (3.1.0)
+      activemodel (>= 3, < 5)
+      activesupport (>= 3, < 5)
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.6.0)
@@ -150,6 +153,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   byebug
+  credit_card_validations
   jbuilder (~> 2.0)
   phantomjs
   rails (= 4.2.5)

@@ -1,49 +1,35 @@
 require 'test_helper'
 
 class OrdersControllerTest < ActionController::TestCase
+  
   setup do
     @order = orders(:one)
   end
-
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:orders)
+  
+  test "should have routes for creating, showing and deleting an order" do
+    assert_routing({ method: 'post', path: '/orders' }, { controller: "orders", action: "create", format: :json })
+    assert_routing({ method: 'get', path: '/orders/1' }, { controller: "orders", action: "show", id: "1", format: :json })
+    assert_routing({ method: 'delete', path: '/orders/1' }, { controller: "orders", action: "destroy", id: "1", format: :json })
   end
-
-  test "should get new" do
-    get :new
-    assert_response :success
+  
+  test "should show order" do
+    get :show, id: @order, format: :json
   end
 
   test "should create order" do
     assert_difference('Order.count') do
-      post :create, order: { card: @order.card, cardholder: @order.cardholder, city: @order.city, country: @order.country, cvv: @order.cvv, expiry_month: @order.expiry_month, expiry_year: @order.expiry_year, first: @order.first, last: @order.last, qty: @order.qty }
+      post :create, 
+        order: { card: '4111111111111111', cardholder: 'Bill Billson', city: @order.city, country: @order.country, cvv: '123', expiry_month: '01', expiry_year: '19', first: @order.first, last: @order.last, qty: @order.qty }, 
+        format: :json
     end
-
-    assert_redirected_to order_path(assigns(:order))
-  end
-
-  test "should show order" do
-    get :show, id: @order
     assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit, id: @order
-    assert_response :success
-  end
-
-  test "should update order" do
-    patch :update, id: @order, order: { card: @order.card, cardholder: @order.cardholder, city: @order.city, country: @order.country, cvv: @order.cvv, expiry_month: @order.expiry_month, expiry_year: @order.expiry_year, first: @order.first, last: @order.last, qty: @order.qty }
-    assert_redirected_to order_path(assigns(:order))
   end
 
   test "should destroy order" do
     assert_difference('Order.count', -1) do
-      delete :destroy, id: @order
+      delete :destroy, id: @order, format: :json
     end
-
-    assert_redirected_to orders_path
+    assert_response :success
   end
+  
 end

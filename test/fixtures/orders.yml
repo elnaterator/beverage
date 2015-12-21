@@ -6,11 +6,6 @@ one:
   last: MyString
   city: MyString
   country: MyString
-  cardholder: MyString
-  card: MyString
-  expiry_month: MyString
-  expiry_year: MyString
-  cvv: MyString
 
 two:
   qty: 1
@@ -18,8 +13,3 @@ two:
   last: MyString
   city: MyString
   country: MyString
-  cardholder: MyString
-  card: MyString
-  expiry_month: MyString
-  expiry_year: MyString
-  cvv: MyString

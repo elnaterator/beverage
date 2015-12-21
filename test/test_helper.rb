@@ -8,3 +8,11 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+# delete key, but return resulting hash
+class Hash
+  def remove k
+    delete k
+    self
+  end
+end
