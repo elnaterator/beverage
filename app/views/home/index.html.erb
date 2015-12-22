@@ -118,7 +118,7 @@
                 <h1>Latest sales</h1>
                 <div id="sales-feed">
                     <% @latest_orders.each do |order| %>
-                    <div class="well sales-feed-item">
+                    <div class="well sales-feed-item" style="display:<%= order[:qty] > 0 ? 'block' : 'none' %>;">
                         <div class="text-primary text-right datetime"><%= order[:created_at] %></div>
                         <div>
                             <span class="qty"><%= order[:qty] %></span> bottles sold to <span class="name"><%= order[:first] %></span> in 

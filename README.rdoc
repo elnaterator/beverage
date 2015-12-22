@@ -1,28 +1,31 @@
-== README
+Habanero Seltzer Co Website
+===========================
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Installation
+------------
 
-Things you may want to cover:
+Assuming you already have npm, ruby 2.2.3, and mysql installed
 
-* Ruby version
+1. Install bundler `gem install bundler`
+2. Install bower `npm install -g bower`
+3. Install ruby dependencies `bundle install`
+4. Install front end dependencies `bower install`
+5. Update config/database.yml with username and password for your mysql installation
+6. Run backend tests `rake test`
+7. Run frontend tests `rake teaspoon`
+8. Run the web application `rails s -p 8080`
+9. View the home page at http://localhost:8080
 
-* System dependencies
+Add an order
+------------
 
-* Configuration
+Use the following rake task to manually make a new sale to see pusher in action: 
 
-* Database creation
+`rake order:sell[5,Bill,Billson,Seattle,USA]`
+`rake order:sell` (uses defaults specified above)
 
-* Database initialization
+Use the following rake task to manually make a new delivery to see pusher in action:
 
-* How to run the test suite
+`rake order:deliver[2]` (2 is the id of the order to be delivered)
+`rake order:deliver` (delivers the earliest placed order that has not yet been delivered)
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

@@ -21,6 +21,7 @@
       $('#sales-feed .sales-feed-item').first().clone().prependTo('#sales-feed');
       // set field values
       var $item = $('#sales-feed .sales-feed-item').first();
+      $item.show();
       $item.find('.datetime').text(data.datetime);
       $item.find('.qty').text(data.qty);
       $item.find('.name').text(data.name);
