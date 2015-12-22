@@ -31,7 +31,7 @@ class OrdersControllerTest < ActionController::TestCase
   
   test "should reject invalid input on create" do
     post :create, order: @order_params.except(:qty), format: :json
-    assert_response :error
+    assert_response 400
     resp = JSON.parse(@response.body)
     assert_equal resp['qty'], ["can't be blank"]
   end

@@ -1,0 +1,73 @@
+<!-- test order form -->
+<div>
+    
+    <input type="number" class="form-control" id="qty" placeholder="0">
+    
+    <form id="order-form" action="/orders" method="post">
+        
+        <!-- Order form nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#order" aria-controls="order" role="tab" data-toggle="tab">Details</a></li>
+            <li role="presentation"><a href="#payment" aria-controls="payment" role="tab" data-toggle="tab">Payment</a></li>
+        </ul>
+                    
+        <div class="tab-content">
+                                
+            <!-- Order details tab -->
+            <div role="tabpanel" class="tab-pane active" id="order">
+   
+                <input type="number" class="form-control" id="qty" placeholder="0">
+                <input type="text" class="form-control" id="first-name"/>
+                <input type="text" class="form-control" id="last-name"/>
+                <input type="text" class="form-control" id="city"/>
+
+                <select class="form-control" id="country">
+                    <option value="usa">USA</option>
+                    <option value="canada">Canada</option>
+                    <option value="mexico">Mexico</option>
+                </select>
+
+            </div>
+            
+            <!-- Payment tab -->
+            <div role="tabpanel" class="tab-pane" id="payment">
+                
+                <input type="text" class="form-control" name="cardholder" id="cardholder" placeholder="Card Holder's Name">
+                <input type="text" class="form-control" name="card" id="card" placeholder="Debit/Credit Card Number">
+                <select class="form-control col-sm-2" name="expiry-month" id="expiry-month">
+                    <option>Month</option>
+                    <option value="01">Jan (01)</option>
+                    <option value="02">Feb (02)</option>
+                    <option value="03">Mar (03)</option>
+                </select>
+                <select class="form-control" name="expiry-year">
+                    <option value="15">2015</option>
+                    <option value="16">2016</option>
+                    <option value="17">2017</option>
+                </select>
+                <input type="text" class="form-control" name="cvv" id="cvv" placeholder="Security Code">
+            </div>
+        
+        </div>
+        
+        
+        <!-- summary -->
+        <dl class="dl-horizontal center-block text-center" id="summary">
+            <dt>Quantity:</dt><dd id="summary-qty">0</dd>
+            <dt>Price/Unit:</dt><dd id="price" price="3.95">$3.95</dd>
+            <dt>Total:</dt><dd id="total">$0.00</dd>
+        </dl>
+        
+        <button id="submit-order" type="button">Place order</button>
+        
+        <div id="success-alert" class="alert alert-success" role="alert" style="display:none;">Your order has been placed!</div>
+        <div id="error-alert" class="alert alert-danger" role="alert" style="display:none;">We were unable to place your order</div>
+        
+    </form>
+    
+    
+
+    
+    
+    
+</div>

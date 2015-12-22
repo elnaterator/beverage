@@ -17,13 +17,13 @@ class OrdersController < ApplicationController
       if @order_service.place_order(@payment,@order)
         render :show, status: :created, location: @order
       else
-        render json: { msg: ['unable to place order, please try again later'] }, status: :error
+        render json: { msg: ['unable to place order, please try again later'] }, status: 500
       end
     else
       errors = {}
-      errors.merge(@order.errors) if @order.errors
-      errors.merge(@payment.errors) if @payment.errors
-      render json: @order.errors, status: :error
+      errors.merge!(@order.errors) if @order.errors
+      errors.merge!(@payment.errors) if @payment.errors
+      render json: errors, status: 400
     end
   end
 

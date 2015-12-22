@@ -5,7 +5,7 @@ var data;
 
 module("sales feed : renderNewSale", {
     setup: function() {
-        fixture.load("fixtures.html");
+        fixture.load("sales_feed.html");
         data = {
             datetime: '2015-12-31 12:59:59',
             qty: 10,
@@ -89,15 +89,13 @@ test("should update bottles sold statistic", function() {
 
 module("sales feed : updateBottlesDelivered", {
     setup: function() {
-        fixture.load("fixtures.html");
+        fixture.load("sales_feed.html");
     }
 });
 
 test('should update bottles delivered', function() {
     $('#bottles-delivered').text('10');
-    data = {
-        qty: 5
-    }
+    data = { qty: 5 };
     feed.updateBottlesDelivered(data);
     equal($('#bottles-delivered').text(),'15','bottles delivered not updated correctly');
 });

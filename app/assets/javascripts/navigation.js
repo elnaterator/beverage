@@ -9,10 +9,8 @@
             scrollTop: offset - 40
         }, 500);
     }
-    
-    var nav = {
-        smoothScroll: smoothScroll
-    };
-    exports.nav = nav;
+
+    exports.nav = {};
+    exports.nav.smoothScroll = smoothScroll;
 
 })(window);

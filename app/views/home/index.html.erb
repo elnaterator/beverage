@@ -138,7 +138,7 @@
         
         <h1>Order</h1>
         
-        <form id="order-form">
+        <form id="order-form" action="/orders" method="post">
             
             <div class="row">
                 <div class="col-xs-12 col-sm-6">
@@ -176,9 +176,9 @@
                             <div class="form-group">
                                 <label for="country">Country</label>
                                 <select class="form-control" id="country">
-                                    <option value="usa">USA</option>
-                                    <option value="canada">Canada</option>
-                                    <option value="mexico">Mexico</option>
+                                    <option value="USA">USA</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="Mexico">Mexico</option>
                                 </select>
                             </div>
                         </div>
@@ -187,11 +187,11 @@
                         <div role="tabpanel" class="tab-pane" id="payment">
                             <div class="form-group">
                                 <label for="card-holder-name">Name on Card</label>
-                                <input type="text" class="form-control" name="card-holder-name" id="card-holder-name" placeholder="Card Holder's Name">
+                                <input type="text" class="form-control" name="cardholder" id="cardholder" placeholder="Card Holder's Name">
                             </div>
                             <div class="form-group">
                                 <label for="card-number">Card Number</label>
-                                <input type="text" class="form-control" name="card-number" id="card-number" placeholder="Debit/Credit Card Number">
+                                <input type="text" class="form-control" name="card" id="card" placeholder="Debit/Credit Card Number">
                             </div>
                             <div class="form-group">
                                 <label for="expiry-month">Expiration Date</label>
@@ -214,7 +214,7 @@
                                         </select>
                                     </div>
                                     <div class="col-xs-6">
-                                        <select class="form-control" name="expiry-year">
+                                        <select class="form-control" name="expiry-year" id="expiry-year">
                                             <option value="15">2015</option>
                                             <option value="16">2016</option>
                                             <option value="17">2017</option>
@@ -254,8 +254,12 @@
                             <dt>Price/Unit:</dt><dd id="price" price="<%= @price %>"><%= number_to_currency(@price) %></dd>
                             <dt>Total:</dt><dd id="total">$0.00</dd>
                         </dl>
-                        <button type="button" class="btn btn-default center-block">Place order</button>
+                        <button id="submit-order" type="button" class="btn btn-default center-block">Place order</button>
                     </div>
+                    
+                    <div id="success-alert" class="alert alert-success" role="alert" style="display:none;">Your order has been placed!</div>
+                    <div id="error-alert" class="alert alert-danger" role="alert" style="display:none;">We were unable to place your order</div>
+                    
                 </div>
                 
             </div>
