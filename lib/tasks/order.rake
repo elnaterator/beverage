@@ -2,8 +2,8 @@
 
 namespace :order do
     
-    desc 'place an order, params are optional, defaulting to 5,Bill,Billson,Seattle,USA'
-    task :place, [:qty,:first,:last,:city,:country] => :environment do |t, args|
+    desc 'place an order, default order details are 5,Bill,Billson,Seattle,USA'
+    task :sell, [:qty,:first,:last,:city,:country] => :environment do |t, args|
         args.with_defaults(qty: 5, first: 'Bill', last: 'Billson', city: 'Seattle', country: 'USA')
         puts "Placing an order for: #{args}"
         
@@ -18,6 +18,18 @@ namespace :order do
         order_service = OrderService.new
         order_service.place_order(payment,order)
         puts "Order successfully placed."
+    end
+    
+    desc 'mark an order as delivered, default order id is the earliest non-delivered order'
+    task :deliver, [:id] => :environment do |t, args|
+        args.with_defaults(id: Order.where(delivered: false).order(id: :asc).take.id)
+        puts "Deliver order #{args[:id]}"
+        order = Order.find(args[:id])
+        puts "Order details: #{order.inspect}"
+        
+        order_service = OrderService.new
+        order_service.deliver(order)
+        puts "Order successfully delivered"
     end
     
 end

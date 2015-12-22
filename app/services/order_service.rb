@@ -18,7 +18,7 @@ class OrderService
                 order.delete
                 return false
             end
-            Pusher.trigger('sales', 'new_sale', {
+            Pusher.trigger('default', 'new_sale', {
               qty: order.qty,
               name: order.first,
               city: order.city,
@@ -30,6 +30,17 @@ class OrderService
             payment.void
             return false
         end
+    end
+    
+    
+    def deliver order
+        order.update(delivered: true)
+        Pusher.trigger('default', 'new_delivery', {
+          qty: order.qty,
+          name: order.first,
+          city: order.city,
+          country: order.country
+        })
     end
     
 end

@@ -7,7 +7,7 @@
         var pusher = new Pusher('d64b28cbfe60f2535ec3', {
           encrypted: true
         });
-        var channel = pusher.subscribe('sales');
+        var channel = pusher.subscribe('default');
         channel.bind('new_sale', function(data) {
           renderNewSale(data);
         });
